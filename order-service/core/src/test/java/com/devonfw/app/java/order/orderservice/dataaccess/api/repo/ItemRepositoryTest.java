@@ -1,5 +1,7 @@
 package com.devonfw.app.java.order.orderservice.dataaccess.api.repo;
 
+import static org.junit.Assert.assertNotNull;
+
 import java.util.List;
 
 import javax.inject.Inject;
@@ -28,6 +30,7 @@ public class ItemRepositoryTest extends ComponentTest {
     List<ItemEntity> foundItems = this.itemRepository.findAll();
 
     // then
+    assertNotNull(foundItems);
     assertThat(foundItems).hasSize(1);
   }
 

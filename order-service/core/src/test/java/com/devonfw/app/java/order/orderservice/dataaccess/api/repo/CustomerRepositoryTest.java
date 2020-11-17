@@ -11,25 +11,32 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 
 import com.devonfw.app.java.order.orderservice.dataaccess.api.CustomerEntity;
+import com.devonfw.module.test.common.base.ComponentTest;
 
 /**
  * @author IMATUJEW
  *
  */
 @SpringBootTest(webEnvironment = WebEnvironment.DEFINED_PORT)
-public class CustomerRepositoryTest {
+public class CustomerRepositoryTest extends ComponentTest {
 
   @Inject
   private CustomerRepository customerRepository;
 
   @Test
-  public void shouldFindAllItems() {
+  public void shouldFindAllCustomers() {
+
+    // CustomerRepository customerRepository;
+    // customerRepository.setId(1L);
+    // customerRepository.setFirstName("Ala");
+    // customerRepository.setLastName("Kot");
 
     // when
     List<CustomerEntity> foundCustomers = this.customerRepository.findAll();
 
     // then
     assertNotNull(foundCustomers);
+    assertThat(foundCustomers).hasSize(1);
   }
 
 }
