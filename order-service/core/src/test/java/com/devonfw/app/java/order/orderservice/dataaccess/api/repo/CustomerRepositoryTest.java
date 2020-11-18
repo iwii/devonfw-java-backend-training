@@ -26,11 +26,6 @@ public class CustomerRepositoryTest extends ComponentTest {
   @Test
   public void shouldFindAllCustomers() {
 
-    // CustomerRepository customerRepository;
-    // customerRepository.setId(1L);
-    // customerRepository.setFirstName("Ala");
-    // customerRepository.setLastName("Kot");
-
     // when
     List<CustomerEntity> foundCustomers = this.customerRepository.findAll();
 
